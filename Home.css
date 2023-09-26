@@ -31,11 +31,15 @@ body {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    backface-visibility: hidden;/*if the element is shaking a bit after transformation*/
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -43,7 +47,7 @@ body {
     font-size: 40px;
     font-weight: 400;
     letter-spacing: 29px;
-    
+
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -58,9 +62,12 @@ body {
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 12.7px;
+    /*
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+    */
+    animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft {
@@ -91,3 +98,23 @@ body {
     }
 }
 
+.btn:link,
+.btn:visited {/*link = pseudo class, state of elememnt*/
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
